@@ -6,6 +6,7 @@ const { rateLimit } = require('./rateLimit.middleware');
 const { ipGuard, blockIp, trackFailedLogin, resetFailedLogin } = require('./ipGuard.middleware');
 const validate = require('./validate.middleware');
 const upload = require('./upload.middleware');
+const usageTracker = require('./usage.middleware');
 const requestContext = require('./requestContext.middleware');
 const { errorHandler, notFoundHandler } = require('./error.middleware');
 
@@ -21,6 +22,7 @@ module.exports = {
   resetFailedLogin,
   validate,
   upload,
+  usageTracker,
   requestContext,
   errorHandler,
   notFoundHandler,

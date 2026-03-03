@@ -33,6 +33,23 @@ Security is not just about passwords; it's about availability.
 - **IP Blocking**: Automatically identifies and bans malicious IPs that fail multiple logins, reducing server load from bot attacks.
 - **Token Blacklisting**: Allows for high-security logout scenarios where tokens must be invalidated before they expire.
 
+### 📬 Why BullMQ for Background Tasks?
+Complex apps should never make the user wait for side effects like sending emails or processing AI.
+- **Reliability**: If a mail server is down, BullMQ handles retries automatically with exponential backoff.
+- **Performance**: Moves heavy computation (like PDF parsing or AI calls) out of the main request-response cycle.
+- **Scalability**: Workers can be scaled independently of the main API.
+
+### 🐳 Why Docker?
+"It works on my machine" is not an option for enterprise.
+- **Environment Parity**: Ensures the exact same versions of Node, MongoDB, and Redis are used across development, staging, and production.
+- **Isolation**: Prevents dependency conflicts with other projects on your local machine.
+
+### 📝 Why Swagger (OpenAPI)?
+The API is only as good as its documentation.
+- **Interactive**: Frontend developers can test endpoints directly from the browser without needing Postman.
+- **Standardized**: Follows the industry-standard OpenAPI 3.0 specification.
+- **Sync**: Documentation stays in sync with your actual code via JSDoc decorators.
+
 ---
 
 ## 🚀 Key Features
@@ -54,8 +71,15 @@ Security is not just about passwords; it's about availability.
 - **Dockerized**: Dedicated `Dockerfile` and `docker-compose.yml` for instant deployment.
 - **Multer Storage**: Multi-cloud support for **AWS S3** and **Cloudinary**.
 - **Stripe Payments**: Enterprise-ready billing and webhook integration.
+- **Automated Usage Tracking**: Global middleware to track per-user API consumption.
 - **Data Export**: Built-in CSV/Excel generation utility.
 - **Audit System**: Every critical action is tracked for compliance.
+
+### 💎 Developer Experience (DX)
+- **Linting & Formatting**: Pre-configured **ESLint** and **Prettier** for code consistency.
+- **Type-Safe validation**: Joi schemas for every endpoint.
+- **Automated Testing**: **Jest** and **Supertest** setup for integration testing.
+- **Git Hooks Ready**: Structure prepared for Husky and lint-staged.
 
 ---
 
